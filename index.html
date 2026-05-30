@@ -6,27 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>js lessons</title>
+    <script src="./script.js" defer></script>
 </head>
 <body>
         hello
 </body>
-<script>
-    function domainName(url) {
-        return url
-        .replace('http://', '')
-        .replace('https://', '')
-        .replace('www.', '')
-        .split('.')[0];
-    }
-
-    console.log(domainName('https://codewars.com/kata/514a024011ea4fb54200004b/train/javascript'))
-    console.log(domainName('http://google.com'))
-    console.log(domainName('http://google.co.jp'))
-    console.log(domainName('www.xakep.ru'))
-    console.log(domainName('https://youtube.com'))
-
-
-
-
-</script>
 </html>
