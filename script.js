@@ -1,29 +1,29 @@
 
 
-function test(arr) {
-    const freq = arr.reduce((acc, item) => {
-        acc[item] = (acc[item] || 0) + 1;
-        return acc;
-    }, {});
+function test(str) {
+    const result = str.split('').map((char, index) => index % 2 ? char.toLowerCase() : char.toUpperCase()).join('');
 
-    for (let key in freq) {
-        if (freq[key] < 2) {
-            delete freq[key];
-        }
-    }
-    console.log(freq);
-    return freq;
+    console.log(result);
+    return result;
 }
 
 
 
 
-test([1, 2, 2, 3, 4, 5]);
-// 15
+// test([1, 2, 2, 3, 4, 5]);
 
-test(["apple", "banana", "apple", "orange", "banana"]);
-// 11
+//
+// test(["apple", "banana", "apple", "orange", "banana"]);
 
-test([true, true, false, true]);
-// 0
+//
+// test([true, true, false, true]);
+
+test("hello world");
+// "HeLlO WoRlD"
+test
+test("JavaScript is fun");
+// "JaVaScRiPt Is FuN"
+
+test("apple banana orange");
+// "ApPlE BaNaNa OrAnGe"
 
