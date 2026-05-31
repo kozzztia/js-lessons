@@ -1,8 +1,10 @@
 
 
-function test(arr) {
+function test(str) {
 
-    const result = [...new Set(arr)].sort((a, b) => a - b );
+    const result = str.split(' ')
+        .map(word => word.split('').reverse().join(''))
+        .join(' ')
 
     console.log(result);
     return result;
@@ -11,7 +13,7 @@ function test(arr) {
 
 
 
-test([1, 100, 2, 2, 3, 4, 5]);
+// test([1, 100, 2, 2, 3, 4, 5]);
 
 //
 // test(["apple", "banana", "apple", "orange", "banana"]);
@@ -19,12 +21,12 @@ test([1, 100, 2, 2, 3, 4, 5]);
 //
 // test([true, true, false, true]);
 
-// test("level madam test noon wow");
+test("level madam test noon wow");
 // // ["level", "madam", "noon", "wow"]
 //
-// test("JavaScript is cool");
+test("JavaScript is cool");
 // // []
 //
-// test("racecar anna civic kayak");
+test("racecar anna civic kayak");
 // // ["racecar", "anna", "civic", "kayak"]
 
