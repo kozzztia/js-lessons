@@ -1,24 +1,12 @@
 
 function test(str) {
-    str = str.toLowerCase();
-    let clean = '';
+    str = str.toLowerCase().split(/[ \n,;!]/);
 
-    for (let i = 0; i < str.length; i++) {
-        // if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= '0' && str[i] <= '9')) {
-        //     clean += str[i];
-        // }
-        if (/[a-z0-9]/.test(str[i])) {
-            clean += str[i];
-        }
-    }
 
-    let reversed = '';
-    for (let i = clean.length - 1; i >= 0; i--) {
-        reversed += clean[i];
-    }
-
-    return clean === reversed;
+    return str.join('') === str.reverse().join('');
 }
 
 
-console.log(test('ollo'));
+console.log(test('ollo !')); // true
+console.log(test('Hello'));  // false
+console.log(test('A man, a plan, a canal: Panama'));
