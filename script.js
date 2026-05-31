@@ -1,15 +1,8 @@
 
 
-function test(str) {
-    // const  result = []
-    //
-    // str.toLowerCase().split(' ').forEach((word) => {
-    //     if(word !== word.split('').reverse().join('')) result.push(word);
-    // })
+function test(arr) {
 
-    const  result = str.toLowerCase().split(' ').filter((word) => {
-        return word === word.split('').reverse().join('');
-    })
+    const result = arr.filter((num) => num % 2 === 0).map((num) =>  num * num)
 
     console.log(result);
     return result;
@@ -18,7 +11,7 @@ function test(str) {
 
 
 
-// test([1, 2, 2, 3, 4, 5]);
+test([1, 2, 2, 3, 4, 5]);
 
 //
 // test(["apple", "banana", "apple", "orange", "banana"]);
@@ -26,12 +19,12 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-test("level madam test noon wow");
-// ["level", "madam", "noon", "wow"]
-
-test("JavaScript is cool");
-// []
-
-test("racecar anna civic kayak");
-// ["racecar", "anna", "civic", "kayak"]
+// test("level madam test noon wow");
+// // ["level", "madam", "noon", "wow"]
+//
+// test("JavaScript is cool");
+// // []
+//
+// test("racecar anna civic kayak");
+// // ["racecar", "anna", "civic", "kayak"]
 
