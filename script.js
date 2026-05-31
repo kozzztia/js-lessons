@@ -2,7 +2,8 @@
 
 function test(str) {
 
-    const  result = str.trim().split(/\s+/).length;
+    const  result = str.trim().split(/\s+/)
+        .sort((a,b) =>  b.length - a.length)[0]
     console.log(result);
     return result;
 }
