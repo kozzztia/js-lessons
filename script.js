@@ -2,16 +2,21 @@
 
 function test(arr) {
 
-    // const result = {}
-    // arr.forEach((item) => {
-    //     if(!result[item]) result[item] = 0
-    //     result[item]++
-    // })
+    const result = {}
 
-    const result = arr.reduce((acc, item) => {
-        acc[item] = (acc[item] || 0) +1;
-        return acc;
-    },{})
+    arr.forEach((item) => {
+        if(!result[item]) result[item] = 0
+        result[item]++
+    })
+
+    arr.forEach((item) => {
+        if(result[item] < 2) delete result[item]
+    })
+
+    // const result = arr.reduce((acc, item) => {
+    //     acc[item] = (acc[item] || 0) +1;
+    //     return acc;
+    // },{})
 
 
     console.log(result);
@@ -21,7 +26,7 @@ function test(arr) {
 
 
 
-test([1, 2, 3, 4, 5]);
+test([1, 2, 2, 3, 4, 5]);
 // 15
 
 test(["apple", "banana", "apple", "orange", "banana"]);
