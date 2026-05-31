@@ -2,8 +2,8 @@
 
 function test(str) {
 
-    const  result = str.trim().split(/\s+/)
-        .sort((a,b) =>  b.length - a.length)[0]
+    const result = str.trim().split(/\s+/)
+        .filter(word => word === word.split('').reverse().join(''))
     console.log(result);
     return result;
 }
