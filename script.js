@@ -6,9 +6,9 @@ function test(str) {
         return acc;
     },{})
 
-    const result = Object.keys(counts).reduce((acc, word) => {
-        return counts[word] > (counts[acc] || 0) ? word : acc;
-    }, '')
+    const result = Object.entries(counts).reduce((acc, word) => {
+        return acc[1] > (word[1] || 0) ? acc : word;
+    }, {})[0]
 
 
     console.log(result);
