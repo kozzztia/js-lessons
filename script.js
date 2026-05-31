@@ -1,9 +1,8 @@
 
 
 function test(str) {
+    const result = [... new Set(str.trim().split(/\s+/))].join(' ')
 
-    const result = str.trim().split(/\s+/)
-        .filter(word => word === word.split('').reverse().join(''))
     console.log(result);
     return result;
 }
@@ -19,12 +18,12 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-test("     level        madam test noon wow");
+test("     hello    world hello");
 // // ["level", "madam", "noon", "wow"]
 //
-test("JavaScript is cool");
+test("apple banana orange banana apple");
 // // []
 //
-test("racecar anna civic kayak");
+test("JavaScript is fun fun fun");
 // // ["racecar", "anna", "civic", "kayak"]
 
