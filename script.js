@@ -1,11 +1,13 @@
 
 
 function test(str) {
+    const letters = ['a', 'e', 'i', 'o', 'u']
 
-    const result = str.split(' ')
-        .map(word => word.split('').reverse().join(''))
-        .join(' ')
-
+    // const result = str.split(' ')
+    //     .map(word => word.split('').filter(char => !letters.includes(char)).join(''))
+    //     .join(' ')
+    // const result = str.split(/[aeiou]/).join('')
+    const result = str.replace(/[aeiou]/gi, '')
     console.log(result);
     return result;
 }
