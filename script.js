@@ -1,33 +1,28 @@
 
 
-// function test(str) {
-//
-//     return str.split('').reduce((acc, char) => {
-//         if (acc[acc.length - 1] !== char) acc += char;
-//         return acc;
-//     });
-// }
+function test(arr) {
 
-function removeConsecutiveDuplicates(str) {
-    const  arr = str.split('');
-    const result = []
+    const  result = arr.reduce((acc, num) => {
+        acc += num;
+        return acc;
+    }, 0);
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== arr[i+1]) {
-            result.push(arr[i]);
-        }
-    }
-    console.log(result.join(''))
-    return result.join('');
+    // const  result = arr.reduce((acc, num) => acc += num, 0);
+
+    console.log(result);
+
+    return  result;
 }
 
 
 
-removeConsecutiveDuplicates("heeellooo");
 
-removeConsecutiveDuplicates("aaabbbccc");
+test([1, 2, 3, 4, 5]);
+// 15
 
-removeConsecutiveDuplicates("JavaScript");
+test([10, -2, 3]);
+// 11
 
-removeConsecutiveDuplicates("112233");
+test([]);
+// 0
 
