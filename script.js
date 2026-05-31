@@ -6,13 +6,7 @@ function test(str) {
         return acc;
     },{})
 
-    const result = Object.entries(counts).reduce((acc, word) => {
-        return acc[1] > (word[1] || 0) ? acc : word;
-    }, {})[0]
-
-
-    console.log(result);
-    return result
+    return  Object.entries(counts).reduce((acc, word) =>  acc[1] > (word[1] || 0) ? acc : word, {})[0]
 }
 
 
@@ -26,12 +20,12 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-test("     hello    world hello");
+console.log(test("     hello    world hello"));
 // // ["level", "madam", "noon", "wow"]
 //
-test("apple banana orange banana");
+console.log(test("apple banana orange banana"));
 // // []
 //
-test("JavaScript is fun fun fun");
+console.log(test("JavaScript is fun fun fun"));
 // // ["racecar", "anna", "civic", "kayak"]
 
