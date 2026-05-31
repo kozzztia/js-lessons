@@ -1,22 +1,12 @@
 
-// function test(array) {
-//     let result = []
-//
-//     array.forEach(element => {
-//         if (!result.includes(element)) {
-//             result.push(element)
-//         }
-//     })
-//     console.log(result)
-// }
 
-function test(arr) {
-    console.log([...new Set(arr)]);
+
+function test(str) {
+    return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ');
 }
 
 
-test([1, 2, 2, 3, 4, 4, 5]);
 
-test(["apple", "banana", "apple", "orange", "banana"]);
-
-test([true, true, false, true]);
+console.log(test("hello world"));
+console.log(test("JavaScript is fun"));
+console.log(test("apple banana orange"));
