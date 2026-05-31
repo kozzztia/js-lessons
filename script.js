@@ -2,7 +2,7 @@
 
 function test(arr) {
 
-    const result = arr.filter((num) => num % 2 === 0).map((num) =>  num * num)
+    const result = [...new Set(arr)].sort((a, b) => a - b );
 
     console.log(result);
     return result;
@@ -11,7 +11,7 @@ function test(arr) {
 
 
 
-test([1, 2, 2, 3, 4, 5]);
+test([1, 100, 2, 2, 3, 4, 5]);
 
 //
 // test(["apple", "banana", "apple", "orange", "banana"]);
