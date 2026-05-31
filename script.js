@@ -1,7 +1,15 @@
 
 
 function test(str) {
-    const result = str.split('').map((char, index) => index % 2 ? char.toLowerCase() : char.toUpperCase()).join('');
+    // const  result = []
+    //
+    // str.toLowerCase().split(' ').forEach((word) => {
+    //     if(word !== word.split('').reverse().join('')) result.push(word);
+    // })
+
+    const  result = str.toLowerCase().split(' ').filter((word) => {
+        return word === word.split('').reverse().join('');
+    })
 
     console.log(result);
     return result;
@@ -18,12 +26,12 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-test("hello world");
-// "HeLlO WoRlD"
-test
-test("JavaScript is fun");
-// "JaVaScRiPt Is FuN"
+test("level madam test noon wow");
+// ["level", "madam", "noon", "wow"]
 
-test("apple banana orange");
-// "ApPlE BaNaNa OrAnGe"
+test("JavaScript is cool");
+// []
+
+test("racecar anna civic kayak");
+// ["racecar", "anna", "civic", "kayak"]
 
