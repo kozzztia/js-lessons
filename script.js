@@ -1,18 +1,33 @@
 
 
+// function test(str) {
+//
+//     return str.split('').reduce((acc, char) => {
+//         if (acc[acc.length - 1] !== char) acc += char;
+//         return acc;
+//     });
+// }
 
-function removeVowels(str) {
-    const exception = ['a','e','i','o','u'];
-    return str.split('').filter(letter => !exception.includes(letter)).join('')
+function removeConsecutiveDuplicates(str) {
+    const  arr = str.split('');
+    const result = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i+1]) {
+            result.push(arr[i]);
+        }
+    }
+    console.log(result.join(''))
+    return result.join('');
 }
 
 
 
-removeVowels("hello world");
-// "hll wrld"
+removeConsecutiveDuplicates("heeellooo");
 
-removeVowels("JavaScript is fun");
-// "JvScrpt s fn"
+removeConsecutiveDuplicates("aaabbbccc");
 
-removeVowels("apple banana orange");
-// "ppl bnn rng"
+removeConsecutiveDuplicates("JavaScript");
+
+removeConsecutiveDuplicates("112233");
+
