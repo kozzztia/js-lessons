@@ -1,12 +1,18 @@
 
 
 
-function test(str) {
-    return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ');
+function removeVowels(str) {
+    const exception = ['a','e','i','o','u'];
+    return str.split('').filter(letter => !exception.includes(letter)).join('')
 }
 
 
 
-console.log(test("hello world"));
-console.log(test("JavaScript is fun"));
-console.log(test("apple banana orange"));
+removeVowels("hello world");
+// "hll wrld"
+
+removeVowels("JavaScript is fun");
+// "JvScrpt s fn"
+
+removeVowels("apple banana orange");
+// "ppl bnn rng"
