@@ -3,11 +3,12 @@
 function test(str) {
     const letters = ['a', 'e', 'i', 'o', 'u']
 
-    // const result = str.split(' ')
-    //     .map(word => word.split('').filter(char => !letters.includes(char)).join(''))
-    //     .join(' ')
-    // const result = str.split(/[aeiou]/).join('')
-    const result = str.replace(/[aeiou]/gi, '')
+    // const result = str.split('').reduce((count, el) => {
+    //     if(letters.includes(el))  count += 1;
+    //     return count;
+    // },0)
+
+    const  result = str.split('').filter(char => letters.includes(char)).length;
     console.log(result);
     return result;
 }
