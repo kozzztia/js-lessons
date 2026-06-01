@@ -1,12 +1,14 @@
 
 
 function test(str) {
-    const counts = str.trim().split(/\s+/).reduce((acc, word) => {
-        acc[word] = (acc[word] || 0) +1;
-        return acc;
+    const result = str.trim().split(/\s+/).reduce((result, item) => {
+        const len = item.length;
+        if(!result[len]) result[len] = [];
+        result[len].push(item);
+        return result
     },{})
 
-    return  Object.entries(counts).reduce((acc, word) =>  acc[1] > (word[1] || 0) ? acc : word, {})[0]
+    return  result
 }
 
 
@@ -20,7 +22,7 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-console.log(test("     hello    world hello"));
+console.log(test(" hello world hello"));
 // // ["level", "madam", "noon", "wow"]
 //
 console.log(test("apple banana orange banana"));
