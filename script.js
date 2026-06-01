@@ -2,9 +2,9 @@
 
 function test(str) {
     const result = str.trim().split(/\s+/).reduce((result, item) => {
-        const len = item.length;
+        const len = item.length.toString();
         if(!result[len]) result[len] = [];
-        result[len].push(item);
+        if(!result[len].includes(item)) result[len].push(item);
         return result
     },{})
 
@@ -22,10 +22,10 @@ function test(str) {
 //
 // test([true, true, false, true]);
 
-console.log(test(" hello world hello"));
+console.log(test(" hello world hello  щ щ щ зз  зз z  z z  "));
 // // ["level", "madam", "noon", "wow"]
 //
-console.log(test("apple banana orange banana"));
+console.log(test("apple banana orange banana з з з з ззз з"));
 // // []
 //
 console.log(test("JavaScript is fun fun fun"));
