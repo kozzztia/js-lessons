@@ -1,33 +1,21 @@
 
+const  container =  document.getElementById('container')
 
-function test(str) {
-    const result = str.trim().split(/\s+/).reduce((result, item) => {
-        const len = item.length.toString();
-        if(!result[len]) result[len] = [];
-        if(!result[len].includes(item)) result[len].push(item);
-        return result
-    },{})
+container.addEventListener('mousedown', (e)=> test(e.target))
+function test(target) {
+    const buttons = container.querySelectorAll('button')
 
-    return  result
+    buttons.forEach(btn => {
+        btn.classList.toggle('active', btn === target);
+    })
+    console.log(target.textContent)
 }
 
 
 
 
-// test([1, 100, 2, 2, 3, 4, 5]);
 
-//
-// test(["apple", "banana", "apple", "orange", "banana"]);
-
-//
-// test([true, true, false, true]);
-
-console.log(test(" hello world hello  щ щ щ зз  зз z  z z  "));
-// // ["level", "madam", "noon", "wow"]
-//
-console.log(test("apple banana orange banana з з з з ззз з"));
-// // []
-//
-console.log(test("JavaScript is fun fun fun"));
-// // ["racecar", "anna", "civic", "kayak"]
-
+// console.log(isValidBrackets("function test() { return [1,2,3]; }")); // true
+// console.log(isValidBrackets("([{}])")); // true
+// console.log(isValidBrackets("([)]"));   // false
+// console.log(isValidBrackets(")("));     // false

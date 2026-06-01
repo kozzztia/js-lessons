@@ -7,8 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>js lessons</title>
     <script src="./script.js" defer></script>
+    <style>
+        button{
+            background: green;
+            transition: all .2s ease;
+            &.active{
+                background: red;
+            }
+        }
+    </style>
 </head>
 <body>
-        hello
+    <div id="container">
+        <button class="active">One</button>
+        <button>Two</button>
+        <button>Three</button>
+    </div>
 </body>
 </html>
