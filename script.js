@@ -1,21 +1,16 @@
 
-const  container =  document.getElementById('container')
+const  container =  document.querySelector('.container')
 
-container.addEventListener('mousedown', (e)=> test(e.target))
-function test(target) {
-    const buttons = container.querySelectorAll('button')
+container.addEventListener('mousedown', (e)=> test(e.target.getAttribute('data-attr').toString()))
+function test(attr = '1') {
+    if (!attr) return;
+    const buttons = container.querySelectorAll('.btn');
+    const tabs = container.querySelectorAll('.tab');
 
-    buttons.forEach(btn => {
-        btn.classList.toggle('active', btn === target);
-    })
-    console.log(target.textContent)
+    for (let i = 0; i < buttons.length; i++) {
+        tabs[i].classList.toggle('active', attr === tabs[i].getAttribute('data-attr'));
+        buttons[i].classList.toggle('active', attr === buttons[i].getAttribute('data-attr'));
+    }
 }
-
-
-
-
-
-// console.log(isValidBrackets("function test() { return [1,2,3]; }")); // true
-// console.log(isValidBrackets("([{}])")); // true
-// console.log(isValidBrackets("([)]"));   // false
-// console.log(isValidBrackets(")("));     // false
+// init
+test()
