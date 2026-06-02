@@ -23,43 +23,18 @@
             justify-content: space-between;
             z-index: 100;
 
-            button {
+            label {
                 flex: 1;
-                background: green;
-                transition: all .2s ease;
+
+                input{
+                    width: 100%;
+                    display: block;
+                    padding: 8px 16px;
+                    background: azure;
+                }
 
                 &.active {
                     background: red;
-                }
-            }
-        }
-
-        .tabs {
-            z-index: 90;
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-
-            .tab {
-                position: absolute;
-                box-sizing: border-box;
-                width: 100%;
-                height: 100%;
-                padding: 20px;
-                border: 1px solid black;
-                transform: translateY(-100%);
-                transition: transform .2s ease, opacity .2s ease, visibility 0s ease ;
-                top: 0;
-                left: 0;
-                opacity: 0;
-                visibility: hidden;
-                background: aqua;
-
-                &.active {
-                    opacity: 1;
-                    position: relative;
-                    visibility: visible;
-                    transform: translateY(0);
                 }
             }
         }
@@ -68,14 +43,7 @@
 <body>
 <div class="container">
     <div class="nav">
-        <button class="btn" data-attr="1">One</button>
-        <button class="btn" data-attr="2">Two</button>
-        <button class="btn" data-attr="3">Three</button>
-    </div>
-    <div class="tabs">
-        <div class="tab" data-attr="1">lorem ipsum 1</div>
-        <div class="tab" data-attr="2">lorem ipsum 2</div>
-        <div class="tab" data-attr="3">lorem ipsum 3</div>
+        <label> <input type="text" name="search" class="search" /> </label>
     </div>
 </div>
 </body>
